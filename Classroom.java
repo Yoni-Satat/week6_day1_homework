@@ -1,13 +1,13 @@
 class Classroom {
-  private Student[] classroom;
+  private Student[] students;
 
   public Classroom() {
-    this.classroom = new Student[20];
+    this.students = new Student[20];
   }
 
   public int studentCount() {
     int count = 0;
-    for(Student student : classroom) {
+    for(Student student : students) {
       if(student != null) {
         count++;
       }
@@ -17,6 +17,10 @@ class Classroom {
 
   public void add(Student student) {
     int studentCount = studentCount();
-    classroom[studentCount] = student;
+    students[studentCount] = student;
+  }
+
+  public boolean isFull() {
+    return studentCount() == students.length;
   }
 }
