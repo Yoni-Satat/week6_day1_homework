@@ -29,4 +29,12 @@ public class ClassroomTest {
     }
     assertEquals(true, classroom.isFull());
   }
+
+  @Test
+  public void cannotTakeStudentsClassroomIsFull() {
+    for (int i = 0; i < 30 ; i++ ) {
+      classroom.add(student);
+    }
+    assertEquals(20, classroom.studentCount());
+  }
 }
